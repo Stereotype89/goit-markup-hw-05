@@ -4,6 +4,7 @@
   --blue: #4d5ae5;
   --blue_: #404bbf;
   --green: #31d0aa;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 p,
@@ -134,10 +135,26 @@ body {
   color: #434455;
   padding-right: 15px;
 }
-.line:is(:hover, :focus) {
-  border-bottom: solid 4px #404bbf;
-  padding-bottom: 20px;
+
+.line {
+  position: relative;
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  top: 43px;
+  display: block;
+  width: 100%;
+  height: 4px;
   border-radius: 2px;
+  background-color: var(--blue);
+  opacity: 0;
+  transition: opacity 250ms var(--timing-function);
+}
+
+.line:hover::after {
+  opacity: 1;
 }
 
 /**--Section1 -INDEX.HTML--*/
