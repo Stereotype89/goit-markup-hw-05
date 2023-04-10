@@ -544,9 +544,8 @@ body {
   flex-grow: 0;
   align-items: flex-start;
   padding: 12px 24px;
-  transition-property: color, background-color;
+  transition-property: background-color, color;
   transition-duration: 250ms;
-  transition: color 250ms;
 }
 
 .section-portfolio .button_:is(:hover, :focus) {
